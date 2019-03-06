@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title></title>
+  </head>
+  <body>
+    <div id="top">
+      Total level : <span id="totalLevel">0</span><br>Piece of slime
+    </div>
+    <div id="bot">
+      <div id="levelsAndActions">
+        <div id="levels">
+          <div id="levelButtons">
+
+          </div>
+          <div id="levelsDiv">
+          </div>
+        </div>
+        <div id="actions">
+          <div id="actionButtons">
+
+          </div>
+          <div id="actionsDiv">
+            <button class="actionButton" id="growButton" onclick="gainXp('growing',1)" disabled>Grow</button><br>
+            <button class="actionButton" id="eatButton" onclick="gainXp('eating',3)" disabled>Eat</button>
+            <button class="actionButton" id="drinkButton" onclick="gainXp('drinking',3)" disabled>Drink</button><br>
+            <button class="actionButton" id="thinkButton" onclick="gainXp('thinking',1)" disabled>Think</button>
+            <button class="actionButton" id="learnButton" onclick="learn()" disabled>Learn (10xp thinking)</button>
+            <button class="actionButton" id="researchButton" onclick="research()" disabled>Research (1xp obs,per,ins)</button><br>
+            <button class="actionButton" id="upgrade1Button" onclick="upgrade(1)" disabled>Upgrade (5 growing)</button>
+            <button class="actionButton" id="upgrade2Button" onclick="upgrade(2)" disabled>Upgrade (10 growing)</button>
+            <button class="actionButton" id="upgrade3Button" onclick="upgrade(3)" disabled>Upgrade (15 growing)</button><br>
+            <button class="actionButton" id="evolve1Button" onclick="evolve(1)" disabled>Evolve (3 not dying)</button>
+            <button class="actionButton" id="evolve2Button" onclick="evolve(2)" disabled>Evolve (6 not dying)</button>
+            <button class="actionButton" id="evolve3Button" onclick="evolve(3)" disabled>Evolve (9 not dying)</button><br>
+            <button class="actionButton" id="automate1Button" onclick="automate(1)" disabled>Automate (4 thinking)</button>
+            <button class="actionButton" id="automate2Button" onclick="automate(2)" disabled>Automate (8 thinking)</button>
+            <button class="actionButton" id="automate3Button" onclick="automate(3)" disabled>Automate (12 thinking)</button><br>
+            <button class="actionButton" id="killButton" onclick="gainXp('killing',1)" disabled>Kill</button>
+            <button class="actionButton" id="assimilateButton" onclick="assimilate()" disabled>Assimilate (1xp killing)</button><br>
+            <button class="actionButton" id="accelerateButton" onclick="gainXp('accelerating',1)" disabled>Accelerate</button>
+            <button class="actionButton" id="increaseEfficiencyButton" onclick="gainXp('efficiencyIncreasing',1)" disabled>Increase Efficiency</button><br>
+            <button class="actionButton" id="generateRandomNumberButton" onclick="generateRandomNumber()" disabled>Generate Random Number</button>
+            <span id="randomNumber">0</span><br>
+            <button class="actionButton" id="gatherButton" onclick="gather()" disabled>Gather</button>
+            <button class="actionButton" id="buildButton" onclick="build()" disabled>Build (all xp harvesting)</button><br>
+            <button class="actionButton" id="saveButton" onclick="save()" disabled>Save</button>
+            <button class="actionButton" id="loadButton" onclick="load()" disabled>Load</button>
+            <button class="actionButton" id="resetButton" onclick="reset()" disabled>Reset (<span id="resetCost">100</span> Levels)</button><br>
+            <button class="actionButton" id="enchance1Button" onclick="enchance(1)" disabled>Enchance (1 researching)</button>
+            <button class="actionButton" id="enchance2Button" onclick="enchance(2)" disabled>Enchance (2 researching)</button>
+            <button class="actionButton" id="enchance3Button" onclick="enchance(3)" disabled>Enchance (3 researching)</button>
+            <button class="actionButton" id="enchance4Button" onclick="enchance(4)" disabled>Enchance (4 researching)</button>
+            <button class="actionButton" id="enchance5Button" onclick="enchance(5)" disabled>Enchance (5 researching)</button>
+          </div>
+        </div>
+      </div>
+      <div id="log">
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="game.js"></script>
+</html>

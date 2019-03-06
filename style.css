@@ -1,0 +1,106 @@
+html{
+  height: calc(100% - 20px);
+}
+
+body{
+  color: white;
+  background-color: black;
+  display: block;
+  height: 100%;
+}
+
+div{
+  display: block;
+  /* border: 0.5px solid blue; */
+}
+
+.xpBar{
+  width: 50%;
+  height: 10px;
+  background-color: gray;
+  display: inline-block;
+}
+.progressBar{
+  height: 100%;
+  width: 0%;
+  background-color: white;
+}
+.level{
+  font-size: 14px;
+  opacity: 0;
+  margin: 0;
+  margin-left: 10px;
+}
+.actionButton{
+  opacity: 0;
+  margin: 0;
+}
+#researchNode{
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  top: 100px;
+  left: 100px;
+  display: none;
+  z-index: 1;
+}
+#top{
+  width: calc(100% - 3px);
+  height: calc(15% - 3px);
+  text-align: center;
+  border-bottom: 1px solid red;
+}
+#bot{
+  width: calc(100% - 3px);
+  height: calc(85% - 3px);
+}
+#levelsAndActions{
+  height: calc(100% - 3px);
+  width: calc(80% - 3px);
+  display: inline-block;
+}
+#levels{
+  height: calc(100% - 3px);
+  width: calc(50% - 3px);
+  display: inline-block;
+  vertical-align: top;
+  border-right: 1px solid red;
+}
+#levelButtons{
+  height: calc(10% - 3px);
+  width: calc(100% - 3px);
+}
+#levelsDiv{
+  height: calc(90% - 3px);
+  width: calc(100% - 3px);
+}
+#actions{
+  height: calc(100% - 3px);
+  width: calc(50% - 3px);
+  display: inline-block;
+  border-right: 1px solid red;
+}
+#actionButtons{
+  height: calc(10% - 3px);
+  width: calc(100% - 3px);
+}
+#actionsDiv{
+  height: calc(90% - 3px);
+  width: calc(100% - 3px);
+}
+#log{
+  width: calc(20% - 3px);
+  height: calc(100% - 3px);
+  display: inline-block;
+  font-size: 12px;
+  vertical-align: top;
+}
+.logItem{
+  opacity : 0;
+}
+#randomNumber{
+  opacity : 0;
+}
+#resettingLevel{
+  text-shadow: 0px 0px 6px white;
+}
