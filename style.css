@@ -13,9 +13,14 @@ div{
   display: block;
   /* border: 0.5px solid blue; */
 }
+textarea{
+  margin : 0;
+  resize: none;
+  opacity: 0;
+}
 
 .xpBar{
-  width: 50%;
+  width: 35%;
   height: 10px;
   background-color: gray;
   display: inline-block;
@@ -25,11 +30,16 @@ div{
   width: 0%;
   background-color: white;
 }
+.progressBar2{
+  height: 100%;
+  width: 0%;
+  background-color: white;
+  float: right;
+}
 .level{
   font-size: 14px;
   opacity: 0;
   margin: 0;
-  margin-left: 10px;
 }
 .actionButton{
   opacity: 0;
@@ -56,12 +66,12 @@ div{
 }
 #levelsAndActions{
   height: calc(100% - 3px);
-  width: calc(80% - 3px);
+  width: calc(85% - 3px);
   display: inline-block;
 }
 #levels{
   height: calc(100% - 3px);
-  width: calc(50% - 3px);
+  width: calc(60% - 3px);
   display: inline-block;
   vertical-align: top;
   border-right: 1px solid red;
@@ -70,13 +80,31 @@ div{
   height: calc(10% - 3px);
   width: calc(100% - 3px);
 }
-#levelsDiv{
+#levelsDivHolder{
   height: calc(90% - 3px);
   width: calc(100% - 3px);
+  position: relative;
+  top: 0;
+  left: 0;
+}
+#levelsDiv{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 10px;
+}
+#levelsDiv2{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  text-align: right;
 }
 #actions{
   height: calc(100% - 3px);
-  width: calc(50% - 3px);
+  width: calc(40% - 3px);
   display: inline-block;
   border-right: 1px solid red;
 }
@@ -89,7 +117,7 @@ div{
   width: calc(100% - 3px);
 }
 #log{
-  width: calc(20% - 3px);
+  width: calc(15% - 3px);
   height: calc(100% - 3px);
   display: inline-block;
   font-size: 12px;
@@ -98,9 +126,15 @@ div{
 .logItem{
   opacity : 0;
 }
-#randomNumber{
+#randomNumber, #mathematiseFormula{
   opacity : 0;
 }
 #resettingLevel{
   text-shadow: 0px 0px 6px white;
+}
+#absorbingLevel{
+  text-shadow: 0px 0px 10px rgb(255,100,150);
+}
+input{
+  opacity: 0;
 }

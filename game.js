@@ -4,36 +4,44 @@ var log = [];
 var totalLevels = 0;
 
 var levels = {
-  notDying : {name : "Not Dying", level : 0, xp : 0, xpReq : 5, xpReqBase : 5, unlocked : false, color : "rgb(200,150,200)"},
-  growing : {name : "Growing", level : 0, xp : 0, xpReq : 5, xpReqBase : 5, unlocked : false, color : "rgb(0,200,0)"},
-  eating : {name : "Eating", level : 0, xp : 0, xpReq : 30, xpReqBase : 30, unlocked : false, color : "rgb(150,100,0)"},
-  drinking : {name : "Drinking", level : 0, xp : 0, xpReq : 30, xpReqBase : 30, unlocked : false, color : "rgb(50,50,200)"},
-  thinking : {name : "Thinking", level : 0, xp : 0, xpReq : 10, xpReqBase : 10, unlocked : false, color : "rgb(200,200,0)"},
-  upgrading : {name : "Upgrading", level : 0, xp : 0, xpReq : 10, xpReqBase : 10, unlocked : false, color : "rgb(100,100,200)"},
-  sleeping : {name : "Sleeping", level : 0, xp : 0, xpReq : 10, xpReqBase : 10, unlocked : false, color : "rgb(100,100,120)"},
-  clicking : {name : "Clicking", level : 0, xp : 0, xpReq : 100, xpReqBase : 100, unlocked : false, color : "rgb(150,100,100)"},
-  evolving : {name : "Evolving", level : 0, xp : 0, xpReq : 10, xpReqBase : 10, unlocked : false, color : "rgb(100,150,100)"},
-  killing : {name : "Killing", level : 0, xp : 0, xpReq : 50, xpReqBase : 50, unlocked : false, color : "rgb(250,0,0)"},
-  assimilating : {name : "Assimilating", level : 0, xp : 0, xpReq : 50, xpReqBase : 50, unlocked : false, color : "rgb(250,0,150)"},
-  automating : {name : "Automating", level : 0, xp : 0, xpReq : 10, xpReqBase : 10, unlocked : false, color : "rgb(250,200,50)"},
-  accelerating : {name : "Accelerating", level : 0, xp : 0, xpReq : 100, xpReqBase : 100, unlocked : false, color : "rgb(250,200,200)"},
-  learning : {name : "Learning", level : 0, xp : 0, xpReq : 50, xpReqBase : 50, unlocked : false, color : "rgb(0,150,250)"},
-  levelingUp : {name : "Leveling Up", level : 0, xp : 0, xpReq : 10, xpReqBase : 10, unlocked : false, color : "rgb(150,150,150)"},
-  idling : {name : "Idling", level : 0, xp : 0, xpReq : 50, xpReqBase : 50, unlocked : false, color : "rgb(100,100,150)"},
-  randomNumberGenerating : {name : "RNG'ing", level : 0, xp : 0, xpReq : 30, xpReqBase : 30, unlocked : false, color : "rgb(250,250,250)"},
-  gathering : {name : "Gathering", level : 0, xp : 0, xpReq : 400, xpReqBase : 400, unlocked : false, color : "rgb(100,80,20)"},
-  building : {name : "Building", level : 0, xp : 0, xpReq : 10000, xpReqBase : 10000, unlocked : false, color : "rgb(100,150,20)"},
-  efficiencyIncreasing : {name : "Efficiency Increasing", level : 0, xp : 0, xpReq : 200, xpReqBase : 200, unlocked : false, color : "rgb(250,100,100)"},
-  mathematising : {name : "Mathematising", level : 0, xp : 0, xpReq : 200, xpReqBase : 200, unlocked : false, color : "rgb(150,0,150)"},
-  saving : {name : "Saving", level : 0, xp : 0, xpReq : 200, xpReqBase : 200, unlocked : false, color : "rgb(150,250,150)"},
-  loading : {name : "Loading", level : 0, xp : 0, xpReq : 5, xpReqBase : 5, unlocked : false, color : "rgb(150,250,250)"},
-  resetting : {name : "Resetting", level : 0, xp : 0, xpReq : 1, xpReqBase : 1, unlocked : false, advanced : true, color : "rgb(0,0,0)"},
-  observing : {name : "Observing", level : 0, xp : 0, xpReq : 5, xpReqBase : 5, unlocked : false, advanced : true, color : "rgb(200,200,250)"},
-  perceiving : {name : "Perceiving", level : 0, xp : 0, xpReq : 5, xpReqBase : 5, unlocked : false, advanced : true, color : "rgb(250,250,100)"},
-  insightCollecting : {name : "Insight Collecting", level : 0, xp : 0, xpReq : 5, xpReqBase : 5, unlocked : false, advanced : true, color : "rgb(250,100,250)"},
-  researching : {name : "Researching", level : 0, xp : 0, xpReq : 10, xpReqBase : 10, unlocked : false, advanced : true, color : "rgb(150,50,150)"},
-  enchancing : {name : "Enchancing", level : 0, xp : 0, xpReq : 1, xpReqBase : 1, unlocked : false, advanced : true, color : "rgb(250,250,100)"},
-  timeWarping : {name : "Time Warping", level : 0, xp : 0, xpReq : 30, xpReqBase : 30, unlocked : false, advanced : true, color : "rgb(200,150,50)"},
+  notDying : {name : "Not Dying", level : 0, xp : 0, xpReq : 5, xpReqBase : 5, unlocked : false, color : "rgb(200,150,200)", parent : "levelsDiv"},
+  growing : {name : "Growing", level : 0, xp : 0, xpReq : 5, xpReqBase : 5, unlocked : false, color : "rgb(0,200,0)", parent : "levelsDiv"},
+  eating : {name : "Eating", level : 0, xp : 0, xpReq : 30, xpReqBase : 30, unlocked : false, color : "rgb(150,100,0)", parent : "levelsDiv"},
+  drinking : {name : "Drinking", level : 0, xp : 0, xpReq : 30, xpReqBase : 30, unlocked : false, color : "rgb(50,50,200)", parent : "levelsDiv"},
+  thinking : {name : "Thinking", level : 0, xp : 0, xpReq : 10, xpReqBase : 10, unlocked : false, color : "rgb(200,200,0)", parent : "levelsDiv"},
+  upgrading : {name : "Upgrading", level : 0, xp : 0, xpReq : 10, xpReqBase : 10, unlocked : false, color : "rgb(100,100,200)", parent : "levelsDiv"},
+  sleeping : {name : "Sleeping", level : 0, xp : 0, xpReq : 30, xpReqBase : 30, unlocked : false, color : "rgb(100,100,120)", parent : "levelsDiv"},
+  clicking : {name : "Clicking", level : 0, xp : 0, xpReq : 100, xpReqBase : 100, unlocked : false, color : "rgb(150,100,100)", parent : "levelsDiv"},
+  evolving : {name : "Evolving", level : 0, xp : 0, xpReq : 10, xpReqBase : 10, unlocked : false, color : "rgb(100,150,100)", parent : "levelsDiv"},
+  killing : {name : "Killing", level : 0, xp : 0, xpReq : 50, xpReqBase : 50, unlocked : false, color : "rgb(250,0,0)", parent : "levelsDiv"},
+  assimilating : {name : "Assimilating", level : 0, xp : 0, xpReq : 50, xpReqBase : 50, unlocked : false, color : "rgb(250,0,150)", parent : "levelsDiv"},
+  automating : {name : "Automating", level : 0, xp : 0, xpReq : 10, xpReqBase : 10, unlocked : false, color : "rgb(250,200,50)", parent : "levelsDiv"},
+  accelerating : {name : "Accelerating", level : 0, xp : 0, xpReq : 100, xpReqBase : 100, unlocked : false, color : "rgb(250,200,200)", parent : "levelsDiv"},
+  learning : {name : "Learning", level : 0, xp : 0, xpReq : 50, xpReqBase : 50, unlocked : false, color : "rgb(0,150,250)", parent : "levelsDiv"},
+  levelingUp : {name : "Leveling Up", level : 0, xp : 0, xpReq : 10, xpReqBase : 10, unlocked : false, color : "rgb(150,150,150)", parent : "levelsDiv"},
+  idling : {name : "Idling", level : 0, xp : 0, xpReq : 50, xpReqBase : 50, unlocked : false, color : "rgb(100,100,150)", parent : "levelsDiv"},
+  randomNumberGenerating : {name : "RNG'ing", level : 0, xp : 0, xpReq : 30, xpReqBase : 30, unlocked : false, color : "rgb(250,250,250)", parent : "levelsDiv"},
+  gathering : {name : "Gathering", level : 0, xp : 0, xpReq : 400, xpReqBase : 400, unlocked : false, color : "rgb(100,80,20)", parent : "levelsDiv"},
+  building : {name : "Building", level : 0, xp : 0, xpReq : 10000, xpReqBase : 10000, unlocked : false, color : "rgb(100,150,20)", parent : "levelsDiv"},
+  efficiencyIncreasing : {name : "Efficiency Increasing", level : 0, xp : 0, xpReq : 200, xpReqBase : 200, unlocked : false, color : "rgb(250,100,100)", parent : "levelsDiv"},
+  mathematising : {name : "Mathematising", level : 0, xp : 0, xpReq : 500, xpReqBase : 500, unlocked : false, color : "rgb(150,250,100)", parent : "levelsDiv"},
+  saving : {name : "Saving", level : 0, xp : 0, xpReq : 200, xpReqBase : 200, unlocked : false, color : "rgb(150,250,150)", parent : "levelsDiv"},
+  loading : {name : "Loading", level : 0, xp : 0, xpReq : 5, xpReqBase : 5, unlocked : false, color : "rgb(150,250,250)", parent : "levelsDiv"},
+  resetting : {name : "Resetting", level : 0, xp : 0, xpReq : 1, xpReqBase : 1, unlocked : false, advanced : true, color : "rgb(0,0,0)", parent : "levelsDiv"},
+  observing : {name : "Observing", level : 0, xp : 0, xpReq : 5, xpReqBase : 5, unlocked : false, advanced : true, color : "rgb(200,200,250)", parent : "levelsDiv"},
+  perceiving : {name : "Perceiving", level : 0, xp : 0, xpReq : 5, xpReqBase : 5, unlocked : false, advanced : true, color : "rgb(250,250,100)", parent : "levelsDiv"},
+  insightCollecting : {name : "Insight Collecting", level : 0, xp : 0, xpReq : 5, xpReqBase : 5, unlocked : false, advanced : true, color : "rgb(250,100,250)", parent : "levelsDiv"},
+  researching : {name : "Researching", level : 0, xp : 0, xpReq : 10, xpReqBase : 10, unlocked : false, advanced : true, color : "rgb(150,50,150)", parent : "levelsDiv"},
+  enchancing : {name : "Enchancing", level : 0, xp : 0, xpReq : 1, xpReqBase : 1, unlocked : false, advanced : true, color : "rgb(250,250,100)", parent : "levelsDiv"},
+  timeWarping : {name : "Time Warping", level : 0, xp : 0, xpReq : 300, xpReqBase : 300, unlocked : false, advanced : true, color : "rgb(150,100,250)", parent : "levelsDiv"},
+  familyAcquiring : {name : "Family Acquiring", level : 0, xp : 0, xpReq : 20, xpReqBase : 20, unlocked : false, advanced : true, color : "rgb(200,150,50)", parent : "levelsDiv"},
+  understanding : {name : "Understanding", level : 0, xp : 0, xpReq : 20, xpReqBase : 20, unlocked : false, advanced : true, color : "rgb(255,255,255)", parent : "levelsDiv"},
+  collecting : {name : "Collecting", level : 0, xp : 0, xpReq : 10000, xpReqBase : 10000, unlocked : false, advanced : true, color : "rgb(200,0,100)", parent : "levelsDiv2"},
+  absorbing : {name : "Absorbing", level : 0, xp : 0, xpReq : 1000, xpReqBase : 1000, unlocked : false, advanced : true, color : "rgb(0,0,0)", parent : "levelsDiv2"},
+  training : {name : "Training", level : 0, xp : 0, xpReq : 1000, xpReqBase : 1000, unlocked : false, advanced : true, color : "rgb(200,50,50)", parent : "levelsDiv2"},
+  displeasing : {name : "Displeasing", level : 0, xp : 0, xpReq : 60, xpReqBase : 60, unlocked : false, advanced : true, color : "rgb(250,100,50)", parent : "levelsDiv2"},
+  upsizing : {name : "Upsizing", level : 0, xp : 0, xpReq : 100, xpReqBase : 100, unlocked : false, advanced : true, color : "rgb(100,250,50)", parent : "levelsDiv2"},
+  selecting : {name : "Selecting", level : 0, xp : 0, xpReq : 150, xpReqBase : 150, unlocked : false, advanced : true, color : "rgb(100,200,250)", parent : "levelsDiv2"},
 };
 
 var sleepingTime = 0;
@@ -45,6 +53,14 @@ var maxEnchance = 5;
 var saveCount = 0;
 var resetting = false;
 var researchNode;
+var acquireFamilyCooldown = 0;
+var mathematiseNum1 = 0;
+var mathematiseNum2 = 0;
+var mathematiseSymbol = 0;
+var understandingGrowing = true;
+var understandingShadow = 0;
+var unlockedLevels = 0;
+var selectingUnlocks = [false,false,false,false,false];
 
 init();
 function init(){
@@ -57,21 +73,32 @@ function init(){
 
 function createLevels(){
   var levelNames = Object.keys(levels);
-  var levelsDiv = document.getElementById("levelsDiv");
   for(var x = 0;x < levelNames.length;x++){
-    var level = document.createElement("div");
-    level.className = "level";
-    level.style.color = levels[levelNames[x]].color;
-    level.id =  levelNames[x]+"Level";
-    level.innerHTML = levels[levelNames[x]].name + " (<span id='"+levelNames[x]+"LevelValue'>"+levels[levelNames[x]].level+"</span>): ";
+    var levelName = levelNames[x];
+    var level = levels[levelName];
+    var levelsDiv = document.getElementById(level.parent);
+    var levelDiv = document.createElement("div");
+    levelDiv.className = "level";
+    levelDiv.style.color = level.color;
+    levelDiv.id =  levelName+"Level";
     var xpBar = document.createElement("div");
     xpBar.className = "xpBar";
-    level.appendChild(xpBar);
     var progressBar = document.createElement("div");
-    progressBar.className = "progressBar";
-    progressBar.id = levelNames[x]+"Xp";
+    if(level.parent=="levelsDiv"){
+      progressBar.className = "progressBar";
+    }else if(level.parent=="levelsDiv2"){
+      progressBar.className = "progressBar2";
+    }
+    progressBar.id = levelName+"Xp";
     xpBar.appendChild(progressBar);
-    levelsDiv.appendChild(level);
+    if(level.parent=="levelsDiv"){
+      levelDiv.innerHTML = level.name + " (<span id='"+levelName+"LevelValue'>"+level.level+"</span>): ";
+      levelDiv.appendChild(xpBar);
+    }else if(level.parent=="levelsDiv2"){
+      levelDiv.appendChild(xpBar);
+      levelDiv.innerHTML += " :"+"(<span id='"+levelName+"LevelValue'>"+level.level+"</span>) "+level.name ;
+    }
+    levelsDiv.appendChild(levelDiv);
   }
 }
 
@@ -85,6 +112,7 @@ function createResearchNode(){
 
 function unlock(level){
   levels[level].unlocked = true;
+  unlockedLevels++;
   fadeIn(document.getElementById(level+"Level"));
   addToLog("Unlocked "+levels[level].name+"!");
   if(level=="growing"){
@@ -148,6 +176,22 @@ function unlock(level){
   }else if(level=="enchancing"){
     fadeIn(document.getElementById("enchance1Button"));
     document.getElementById("enchance1Button").disabled = false;
+  }else if(level=="familyAcquiring"){
+    fadeIn(document.getElementById("acquireFamilyButton"));
+    document.getElementById("acquireFamilyButton").disabled = false;
+  }else if(level=="mathematising"){
+    fadeIn(document.getElementById("mathematiseButton"));
+    document.getElementById("mathematiseButton").disabled = false;
+    fadeIn(document.getElementById("mathematiseFormula"));
+    document.getElementById("mathematiseFormula").disabled = false;
+    fadeIn(document.getElementById("mathematiseAnswer"));
+    document.getElementById("mathematiseAnswer").disabled = false;
+  }else if(level=="training"){
+    fadeIn(document.getElementById("trainButton"));
+    document.getElementById("trainButton").disabled = false;
+  }else if(level=="absorbing"){
+    fadeIn(document.getElementById("absorbButton"));
+    document.getElementById("absorbButton").disabled = false;
   }
 }
 
@@ -242,9 +286,14 @@ function enchance(num){
     addToLog("Leveled down 'Researching' level to level "+levels.researching.level+"!!!");
   }
   if(num==1){
-    unlock("timeWarping");
+    unlock("upsizing");
+    document.getElementById("top").style.fontSize = "24px";
+    document.getElementById("totalLevelString").style.textDecoration = "underline";
+    document.getElementById("slimeString").style.color = "rgb(150,250,150)";
   }else if(num==2){
-
+    unlock("selecting");
+    document.getElementById("autoGrowCheck").disabled = false;
+    fadeIn(document.getElementById("autoGrowCheck"));
   }else if(num==3){
 
   }else if(num==4){
@@ -277,6 +326,15 @@ function generateRandomNumber(){
   document.getElementById("randomNumber").innerHTML = randomNumber;
 }
 
+function autoGenerateRandomNumber(){
+  gainXp("randomNumberGenerating",1);
+  temp = Math.random()*0.01 - 0.005 + randomNumber;
+  if(temp>=randomNumber){
+    randomNumber = Math.min(temp,1+0.18*levels.randomNumberGenerating.level);
+    document.getElementById("randomNumber").innerHTML = randomNumber;
+  }
+}
+
 function gather(){
   gainXp("gathering",(1+levels.gathering.level*0.2)*levels.eating.level*levels.drinking.level*(0.2+levels.eating.xp/levels.eating.xpReq*4.8)*(0.2+levels.drinking.xp/levels.drinking.xpReq*4.8));
   levels.eating.xp *= 0.95;
@@ -291,17 +349,55 @@ function build(){
   document.getElementById("gatheringXp").style.width = Math.min(100,(100*levels.gathering.xp/levels.gathering.xpReq))+"%";
 }
 
+function mathematise(){
+  var givenAnswer = document.getElementById("mathematiseAnswer").value;
+  var correctAnswer = 0;
+  var mathematiseSymbolString = "";
+  /// 0 = +, 1 = -, 2 = *, 3 = /
+  if(mathematiseSymbol==0){
+    correctAnswer = mathematiseNum1+mathematiseNum2;
+  }else if(mathematiseSymbol==1){
+    correctAnswer = mathematiseNum1-mathematiseNum2;
+  }else if(mathematiseSymbol==2){
+    correctAnswer = mathematiseNum1*mathematiseNum2;
+  }else{
+    correctAnswer = mathematiseNum1/mathematiseNum2;
+  }
+  if(givenAnswer == correctAnswer){
+    gainXp("mathematising",10);
+  }
+  mathematiseSymbol = Math.floor(Math.random()*4);
+  mathematiseNum2 = Math.floor(Math.random()*100);
+  if(mathematiseSymbol==3){
+    mathematiseNum1 = mathematiseNum2*Math.floor(Math.random()*100);
+    mathematiseSymbolString = "/";
+  }else{
+    mathematiseNum1 = Math.floor(Math.random()*100);
+    if(mathematiseSymbol==0){
+      mathematiseSymbolString = "+";
+    }else if(mathematiseSymbol==1){
+      mathematiseSymbolString = "-";
+    }else{
+      mathematiseSymbolString = "*";
+    }
+  }
+  document.getElementById("mathematiseFormula").innerHTML = mathematiseNum1+" "+mathematiseSymbolString+" "+mathematiseNum2+" = ";
+}
+
 function research(){
-  if(levels.observing.xp>=1&&levels.perceiving.xp>=1&&levels.insightCollecting>=1){
+  if(levels.observing.xp>=1&&levels.perceiving.xp>=1&&levels.insightCollecting.xp>=1){
     levels.observing.xp--;
     levels.perceiving.xp--;
     levels.insightCollecting.xp--;
+    document.getElementById("observingXp").style.width = Math.min(100,(100*levels.observing.xp/levels.observing.xpReq))+"%";
+    document.getElementById("perceivingXp").style.width = Math.min(100,(100*levels.perceiving.xp/levels.perceiving.xpReq))+"%";
+    document.getElementById("insightCollectingXp").style.width = Math.min(100,(100*levels.insightCollecting.xp/levels.insightCollecting.xpReq))+"%";
     gainXpAdv("researching",1+0.1*(levels.observing.level+levels.perceiving.level+levels.insightCollecting.level));
   }
 }
 
 function reset(){
-  if(totalLevels>=100+levels.resetting.level*5){
+  if(totalLevels>=100+levels.resetting.level*25){
     resetting = true;
     var delay = 0;
     var levelNames = Object.keys(levels);
@@ -321,11 +417,30 @@ function reset(){
         delay+=100;
       }
     }
-    document.getElementById("resetCost").innerHTML = (100+levels.resetting.level*5)+"";
+    document.getElementById("resetCost").innerHTML = (100+levels.resetting.level*25)+"";
     levels.resetting.level++;
     document.getElementById("resettingLevelValue").innerHTML = levels.resetting.level;
     resetting = false;
   }
+}
+
+function acquireFamily(){
+  acquireFamilyCooldown = 0;
+  document.getElementById("acquireFamilyButton").disabled = true;
+  gainXpAdv("familyAcquiring",1);
+}
+
+function train(){
+  gainXpAdv("training",levels.familyAcquiring.level-levels.displeasing.level);
+  if(levels.displeasing.unlocked){
+    gainXpAdv("displeasing",levels.displeasing.level+1);
+  }
+}
+
+function absorb(){
+  gainXpAdv("absorbing",levels.collecting.xp/100);
+  levels.collecting.xp = 0;
+  document.getElementById("collectingXp").style.width = Math.min(100,(100*levels.collecting.xp/levels.collecting.xpReq))+"%";
 }
 
 function gainXp(levelName, XP){
@@ -334,6 +449,9 @@ function gainXp(levelName, XP){
     var level = levels[levelName];
     level.xp += XP*(1+totalLevels/200)*(1+levels.evolving.level*0.10)*(1+randomNumber/20)*(1+levels.efficiencyIncreasing.level*0.05)*(1+levels.resetting.level*0.25);
     progressBar.style.width = Math.min(100,(100*level.xp/level.xpReq))+"%";
+    if(levels.collecting.unlocked){
+      gainXpAdv("collecting",1+levels.collecting.level*0.05);
+    }
   }
 }
 
@@ -341,7 +459,7 @@ function gainXpAdv(levelName, XP){
   if(levels[levelName].unlocked){
     var progressBar = document.getElementById(levelName+"Xp");
     var level = levels[levelName];
-    level.xp += XP*(1+totalLevels/200)*(1+levels.resetting.level*0.25);
+    level.xp += XP*(1+levels.enchancing.level*0.1)*(1+totalLevels/1000);
     progressBar.style.width = Math.min(100,(100*level.xp/level.xpReq))+"%";
   }
 }
@@ -381,7 +499,7 @@ function fadeOut(item){
   },50);
 }
 
-var researchNodeTimer = function(){
+var researchNodeTimer = function researchNodeTimer(){
   var rand = Math.random();
   gainXpAdv("timeWarping",1);
   researchNode.style.display = "none";
@@ -415,12 +533,14 @@ var secondTimer = function secondTimer(){
   document.getElementById("notDyingXp").style.width = Math.min(100,(100*levels.notDying.xp/levels.notDying.xpReq))+"%";
 
   ///autoGrow
-  if(levels.eating.xp >= levels.eating.level&&levels.drinking.xp >= levels.drinking.level&&levels.drinking.level > 0&&levels.eating.level > 0){
-    levels.eating.xp -= levels.eating.level;
-    document.getElementById("eatingXp").style.width = Math.min(100,(100*levels.eating.xp/levels.eating.xpReq))+"%";
-    levels.drinking.xp -= levels.drinking.level;
-    document.getElementById("drinkingXp").style.width = Math.min(100,(100*levels.drinking.xp/levels.drinking.xpReq))+"%";
-    gainXp("growing",levels.eating.level+levels.drinking.level);
+  if(document.getElementById("autoGrowCheck").checked){
+    if(levels.eating.xp >= levels.eating.level&&levels.drinking.xp >= levels.drinking.level&&levels.drinking.level > 0&&levels.eating.level > 0){
+      levels.eating.xp -= levels.eating.level;
+      document.getElementById("eatingXp").style.width = Math.min(100,(100*levels.eating.xp/levels.eating.xpReq))+"%";
+      levels.drinking.xp -= levels.drinking.level;
+      document.getElementById("drinkingXp").style.width = Math.min(100,(100*levels.drinking.xp/levels.drinking.xpReq))+"%";
+      gainXp("growing",levels.eating.level+levels.drinking.level);
+    }
   }
 
   ///sleeping
@@ -453,6 +573,43 @@ var secondTimer = function secondTimer(){
 
   ///rng'ing
   document.getElementById("randomNumberGeneratingLevel").style.color = "rgb("+Math.floor(Math.random()*255)+","+Math.floor(Math.random()*255)+","+Math.floor(Math.random()*255)+")";
+  if(document.getElementById("autoGenerateCheck").checked){
+    autoGenerateRandomNumber();
+  }
+
+  ///family acquiring (thats really hard to spell btw)
+  acquireFamilyCooldown++;
+  if(acquireFamilyCooldown>=5){
+    document.getElementById("acquireFamilyButton").disabled = false;
+  }
+
+  ///absorbing
+  if(document.getElementById("autoAbsorbCheck").checked){
+    absorb();
+  }
+
+  ///displeasing
+  if(levels.displeasing.unlocked){
+    if(levels.displeasing.xp<=0&&levels.displeasing.level!=0){
+      levels.displeasing.level--;
+      levels.displeasing.xpReq/=2;
+      levels.displeasing.xp = levels.displeasing.xpReq;
+      totalLevels--;
+      document.getElementById("displeasingLevelValue").innerHTML = levels.displeasing.level;
+      document.getElementById("totalLevel").innerHTML = totalLevels;
+    }
+    if(levels.displeasing.xp>0){
+      gainXpAdv("displeasing",-1);
+    }else if (levels.displeasing.xp<0) {
+      levels.displeasing.xp = 0;
+    }
+    if(levels.displeasing.level>=10){
+      document.getElementById("trainButton").disabled = true;
+    }
+    if(levels.displeasing.level<=5){
+      document.getElementById("trainButton").disabled = false;
+    }
+  }
 
   ///checkUnlocks
   if(!levels.growing.unlocked&&levels.notDying.level>0){
@@ -503,6 +660,37 @@ var secondTimer = function secondTimer(){
   if(!levels.enchancing.unlocked&&levels.researching.level>0){
     unlock("enchancing");
   }
+  if(!levels.familyAcquiring.unlocked&&levels.building.level>0){
+    unlock("familyAcquiring");
+  }
+  if(!levels.understanding.unlocked&&levels.mathematising.level>0){
+    unlock("understanding");
+  }
+  if(!levels.timeWarping.unlocked&&levels.accelerating.level>4&&levels.efficiencyIncreasing.level>4){
+    unlock("timeWarping");
+  }
+  if(!levels.collecting.unlocked&&unlockedLevels>31){
+    unlock("collecting");
+  }
+  if(!levels.training.unlocked&&levels.familyAcquiring.level>2){
+    unlock("training");
+  }
+  if(!levels.absorbing.unlocked&&levels.resetting.level>4){
+    unlock("absorbing");
+  }
+  if(!levels.displeasing.unlocked&&levels.training.level>0){
+    unlock("displeasing");
+  }
+  if(!selectingUnlocks[0]&&levels.selecting.level>0){
+    selectingUnlocks[0] = true;
+    document.getElementById("autoGenerateCheck").disabled = false;
+    fadeIn(document.getElementById("autoGenerateCheck"));
+  }
+  if(!selectingUnlocks[1]&&levels.selecting.level>1){
+    selectingUnlocks[1] = true;
+    document.getElementById("autoAbsorbCheck").disabled = false;
+    fadeIn(document.getElementById("autoAbsorbCheck"));
+  }
   setTimeout(secondTimer, Math.round(1000/(1+0.03*levels.accelerating.level+levels.timeWarping.level*0.05)));
 };
 setTimeout(secondTimer, Math.round(1000/(1+0.03*levels.accelerating.level+levels.timeWarping.level*0.05)));
@@ -513,7 +701,7 @@ setInterval(function frame(){
     var level = levels[levelNames[x]];
 
     ///level ups
-    if(level.xp >= level.xpReq){
+    if(level.xp >= level.xpReq&&(levelNames[x]!="familyAcquiring"||(levelNames[x]=="familyAcquiring"&&level.level<levels.building.level))){
       level.level++;
       level.xp-=level.xpReq;
       level.xpReq*=2;
@@ -528,6 +716,22 @@ setInterval(function frame(){
     }
   }
 },20);
+
+setInterval(function animation(){
+  // text-shadow: 0px 0px 6px white;
+  if(understandingGrowing){
+    understandingShadow+=0.3;
+    if(understandingShadow>=6){
+      understandingGrowing = false;
+    }
+  }else{
+    understandingShadow-=0.3;
+    if(understandingShadow<=0){
+      understandingGrowing = true;
+    }
+  }
+  document.getElementById("understandingLevel").style.textShadow = "0px 0px "+understandingShadow+"px white";
+},50);
 
 setInterval(function autoSave(){
   save();
@@ -555,9 +759,9 @@ function load(){
     var temp = JSON.parse(atob(localStorage.allTheLevelsSave));
     // console.log("loaded");
     for(var x = 0;x < Object.keys(temp).length;x++){
-      // if(Object.keys(temp)[x]=="insighting"){
-      //   temp.insightCollecting = temp.insighting;
-      //   delete temp.insighting;
+      // if(Object.keys(temp)[x]=="optionSelecting"){
+      //   temp.selecting = temp.optionSelecting;
+      //   delete temp.optionSelecting;
       // }
       let levelName = Object.keys(temp)[x];
       levels[levelName].level = temp[levelName].level;
@@ -573,7 +777,8 @@ function load(){
       }
     }
     document.getElementById("totalLevel").innerHTML = totalLevels;
-    document.getElementById("resetCost").innerHTML = (100+levels.resetting.level*5)+"";
+    document.getElementById("resetCost").innerHTML = (100+levels.resetting.level*25)+"";
+    mathematise();
     checkUpgradesOnLoad();
     if(levels.loading.unlocked){
       gainXp("loading",1);
@@ -623,10 +828,23 @@ function checkUpgradesOnLoad(){
   if(levels.mathematising.unlocked){
     document.getElementById("automate3Button").disabled = true;
   }
-  if(levels.timeWarping.unlocked){
+  if(levels.upsizing.unlocked){
     fadeIn(document.getElementById("enchance2Button"));
     document.getElementById("enchance2Button").disabled = false;
     document.getElementById("enchance1Button").disabled = true;
+    document.getElementById("top").style.fontSize = "24px";
+    document.getElementById("totalLevelString").style.textDecoration = "underline";
+    document.getElementById("slimeString").style.color = "rgb(150,250,150)";
+  }
+  if(levels.selecting.unlocked){
+    fadeIn(document.getElementById("enchance3Button"));
+    document.getElementById("enchance3Button").disabled = false;
+    document.getElementById("enchance2Button").disabled = true;
+    document.getElementById("autoGrowCheck").disabled = false;
+    fadeIn(document.getElementById("autoGrowCheck"));
+    if(levels.selecting.level>0){
+      document.getElementById("autoGenerateCheck").checked = true;
+    }
   }
 }
 
