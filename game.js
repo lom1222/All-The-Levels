@@ -299,6 +299,7 @@ function init(){
   createSkillingDiv();
   if(!loadFromLocalstorage()){
     unlock("notDying");
+    levels.notDying.xp = 0;
   }
 }
 //creates the level Dom objects:
@@ -1333,8 +1334,8 @@ function getResettingLevelXpModifier(){
 }
 //gets training xp modifier based on if the level is selected in training
 function getTrainingXpModifier(levelName){
+  var trainingXpModifier = 0;
   if(levels.training.unlocked){
-    var trainingXpModifier = 0;
     var trainingBonus = (levels.training.level+levels.familyAcquiring.level)*0.02;
     if(document.getElementById("trainingSelect").value==levelName){
       trainingXpModifier += trainingBonus;
@@ -1348,8 +1349,8 @@ function getTrainingXpModifier(levelName){
     if(equippedItem2.equippementType=="hand"){
       trainingXpModifier += trainingBonus;
     }
-    return trainingXpModifier;
   }
+  return trainingXpModifier;
 }
 //gets the item xp modifier for the level, this is based on item stars, levels, affixes, and if the affix matches, then affix ranks and stars as well
 function getItemXpModifier(levelName){
