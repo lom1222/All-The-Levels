@@ -1,4 +1,7 @@
-# AutoLevels
+# ALL THE LEVELS
+
+**7/10/2019**<br>
+finished the game, too many things to list.
 
 **3/7/2019** <br>
 added 7 more levels <br>
