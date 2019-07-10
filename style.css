@@ -1,34 +1,77 @@
 html{
   height: calc(100% - 20px);
 }
-
 body{
   color: white;
   background-color: black;
   display: block;
   height: 100%;
 }
-
 div{
   display: block;
-  /* border: 0.5px solid blue; */
 }
 textarea{
   margin : 0;
   resize: none;
   opacity: 0;
 }
-
+select{
+  width: 150px;
+  opacity: 0;
+}
+option{
+  background-color: black;
+}
 .xpBar{
-  width: 35%;
+  width: 33%;
   height: 10px;
   background-color: gray;
   display: inline-block;
+  pointer-events: all;
+}
+.tooltip, #questionTooltip{
+  position: relative;
+  width: 250px;
+  min-height: 100px;
+  display: none;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 4px;
+  text-align: left;
+  color: black;
+  float: left;
+  z-index: 1;
+  bottom: 50px;
+  font-size: 16px;
+  opacity: 0;
+  text-shadow: none;
+}
+.levelsDivLeft .tooltip{
+  left: 100%;
+}
+.levelsDivRight .tooltip{
+  right: 100%;
+}
+#skillingDiv .tooltip{
+  right: 300%;
+}
+.xpBar:hover .tooltip{
+  display: block;
+}
+.tooltipHeader{
+  font-size: 24px;
+  text-decoration: underline;
+  font-weight: bold;
+  text-align: center;
+}
+.tooltip span{
+  /* border: 1px solid red; */
 }
 .progressBar{
   height: 100%;
   width: 0%;
   background-color: white;
+  float: left;
 }
 .progressBar2{
   height: 100%;
@@ -40,6 +83,7 @@ textarea{
   font-size: 14px;
   opacity: 0;
   margin: 0;
+  height: 16px;
 }
 .actionButton{
   opacity: 0;
@@ -53,12 +97,13 @@ textarea{
   left: 100px;
   display: none;
   z-index: 1;
+  pointer-events: all;
 }
 #top{
   width: calc(100% - 3px);
   height: calc(15% - 3px);
   text-align: center;
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid gray;
 }
 #bot{
   width: calc(100% - 3px);
@@ -71,30 +116,31 @@ textarea{
 }
 #levels{
   height: calc(100% - 3px);
-  width: calc(60% - 3px);
+  width: calc(55% - 3px);
   display: inline-block;
   vertical-align: top;
-  border-right: 1px solid red;
+  border-right: 1px solid gray;
 }
-#levelButtons{
-  height: calc(10% - 3px);
-  width: calc(100% - 3px);
-}
-#levelsDivHolder{
+.levelDivHolder{
   height: calc(90% - 3px);
   width: calc(100% - 3px);
   position: relative;
   top: 0;
   left: 0;
+  display: none;
 }
-#levelsDiv{
+#levelsDivHolder{
+  display: block;
+  pointer-events: none;
+}
+.levelsDivLeft{
   height: 100%;
   width: 100%;
   position: absolute;
   top: 0;
   left: 10px;
 }
-#levelsDiv2{
+.levelsDivRight{
   height: 100%;
   width: 100%;
   position: absolute;
@@ -102,19 +148,32 @@ textarea{
   right: 10px;
   text-align: right;
 }
+#skillingDiv{
+  width: 50%;
+  position: absolute;
+  right : 10px;
+}
 #actions{
   height: calc(100% - 3px);
-  width: calc(40% - 3px);
+  width: calc(45% - 3px);
   display: inline-block;
-  border-right: 1px solid red;
+  border-right: 1px solid gray;
 }
-#actionButtons{
+.actionsDiv{
+  width: calc(100% - 3px);
+  display: none;
+}
+#basicActionsDiv{
+  display: block;
+}
+.buttonHolder{
   height: calc(10% - 3px);
   width: calc(100% - 3px);
+  text-align: center;
 }
-#actionsDiv{
-  height: calc(90% - 3px);
-  width: calc(100% - 3px);
+.tabButton{
+ opacity: 0;
+ margin: 3px;
 }
 #log{
   width: calc(15% - 3px);
@@ -126,15 +185,53 @@ textarea{
 .logItem{
   opacity : 0;
 }
-#randomNumber, #mathematiseFormula{
+.hidden{
   opacity : 0;
 }
-#resettingLevel{
+.removed{
+  display: none;
+}
+.itemName{
+  font-size: 13px;
+  overflow: visible;
+}
+#resettingLevel, #hardResettingLevel{
   text-shadow: 0px 0px 6px white;
 }
 #absorbingLevel{
   text-shadow: 0px 0px 10px rgb(255,100,150);
 }
-input{
-  opacity: 0;
+#reclaimingLevel{
+  text-shadow: 0px 0px 10px rgb(100,255,200);
+}
+#cheatCodingLevel{
+  font-family: monospace;
+  font-size: 12px;
+}
+#skillingLevel{
+  height: 112px;
+}
+#absolutePerfectingLevel{
+  text-shadow: 0px 0px 20px white;
+}
+#hardResetButton{
+  background-color: black;
+  color: red;
+  border-color: red;
+}
+.reallySmallText{
+  font-size: 8px;
+  line-height: 8px;
+  display: block;
+  opacity: 1;
+}
+#helpButton{
+  width: 25px;
+  height: 25px;
+}
+#helpButton:hover #questionTooltip{
+  display: block;
+}
+#achievementLevelsSelectButton:hover{
+
 }

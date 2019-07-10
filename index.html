@@ -3,69 +3,145 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
-    <title></title>
+    <title>All The Levels</title>
   </head>
   <body>
     <div id="top">
-      <span id="totalLevelString">Total level : <span id="totalLevel">0</span></span><br><span id="slimeString">Piece of slime</span>
+      <span id="totalLevelString">Total level : <span id="totalLevel">0</span></span><br><span id="slimeString">Piece of slime</span><br>
+      <button id="helpButton" onclick="askForHelp()">?
+        <div id="questionTooltip">
+          0. x = # of first letter of level type in alphabet<br>
+          1. get the x'th letter of the level skill type for first 60 levels (wrap around if needed)<br>
+          2. y = # of appearances of a letter at step 1<br>
+          3. order letters in ascending y order (ignore 0s)(if equal, alphabetically)<br>
+          4. z = # of index of letter in array from step 3<br>
+          5. enter sum of all x*y*z into save code textarea<br>
+          6. hard reset (if you get it right, you will not lose any progress)</div></button>
     </div>
     <div id="bot">
       <div id="levelsAndActions">
         <div id="levels">
-          <div id="levelButtons">
-
+          <div id="levelButtons" class="buttonHolder">
+            <button id="basicLevelsSelectButton" class="tabButton" onclick="selectLevelsTab('basic')" disabled>Basic</button>
+            <button id="achievementLevelsSelectButton" class="tabButton" onclick="selectLevelsTab('achievements')" disabled>Achieves</button>
           </div>
-          <div id="levelsDivHolder">
-            <div id="levelsDiv">
+          <div id="levelsDivHolder" class="levelDivHolder">
+            <div id="levelsDiv" class="levelsDivLeft">
             </div>
-            <div id="levelsDiv2">
+            <div id="levelsDiv2" class="levelsDivRight">
+            </div>
+            <div id="skillingDiv">
+            </div>
+          </div>
+          <div id="achievementsDivHolder" class="levelDivHolder">
+            <div id="achievementsDiv" class="levelsDivLeft">
             </div>
           </div>
         </div>
         <div id="actions">
-          <div id="actionButtons">
-
+          <div id="actionButtons" class="buttonHolder">
+            <button id="basicActionsSelectButton" class="tabButton" onclick="selectActionsTab('basic')" disabled>Basic</button>
+            <button id="metaActionsSelectButton" class="tabButton" onclick="selectActionsTab('meta')" disabled>Options</button>
+            <button id="itemActionsSelectButton" class="tabButton" onclick="selectActionsTab('item')" disabled>Items</button>
           </div>
           <div id="actionsDiv">
-            <button class="actionButton" id="growButton" onclick="gainXp('growing',1)" disabled>Grow</button>
-            <input type="checkbox" id="autoGrowCheck" name="Auto grow" checked disabled onclick="gainXpAdv('selecting',1)"><br>
-            <button class="actionButton" id="eatButton" onclick="gainXp('eating',3)" disabled>Eat</button>
-            <button class="actionButton" id="drinkButton" onclick="gainXp('drinking',3)" disabled>Drink</button><br>
-            <button class="actionButton" id="thinkButton" onclick="gainXp('thinking',1)" disabled>Think</button>
-            <button class="actionButton" id="learnButton" onclick="learn()" disabled>Learn (10xp thinking)</button>
-            <button class="actionButton" id="researchButton" onclick="research()" disabled>Research (1xp obs,per,ins)</button><br>
-            <button class="actionButton" id="upgrade1Button" onclick="upgrade(1)" disabled>Upgrade (5 growing)</button>
-            <button class="actionButton" id="upgrade2Button" onclick="upgrade(2)" disabled>Upgrade (10 growing)</button>
-            <button class="actionButton" id="upgrade3Button" onclick="upgrade(3)" disabled>Upgrade (15 growing)</button><br>
-            <button class="actionButton" id="evolve1Button" onclick="evolve(1)" disabled>Evolve (3 not dying)</button>
-            <button class="actionButton" id="evolve2Button" onclick="evolve(2)" disabled>Evolve (6 not dying)</button>
-            <button class="actionButton" id="evolve3Button" onclick="evolve(3)" disabled>Evolve (9 not dying)</button><br>
-            <button class="actionButton" id="automate1Button" onclick="automate(1)" disabled>Automate (4 thinking)</button>
-            <button class="actionButton" id="automate2Button" onclick="automate(2)" disabled>Automate (8 thinking)</button>
-            <button class="actionButton" id="automate3Button" onclick="automate(3)" disabled>Automate (12 thinking)</button><br>
-            <button class="actionButton" id="killButton" onclick="gainXp('killing',1)" disabled>Kill</button>
-            <button class="actionButton" id="assimilateButton" onclick="assimilate()" disabled>Assimilate (1xp killing)</button><br>
-            <button class="actionButton" id="accelerateButton" onclick="gainXp('accelerating',1)" disabled>Accelerate</button>
-            <button class="actionButton" id="increaseEfficiencyButton" onclick="gainXp('efficiencyIncreasing',1)" disabled>Increase Efficiency</button><br>
-            <button class="actionButton" id="generateRandomNumberButton" onclick="generateRandomNumber()" disabled>Generate Random Number</button>
-            <span id="randomNumber">0</span>
-            <input type="checkbox" id="autoGenerateCheck" name="Auto generate" disabled onclick="gainXpAdv('selecting',1)"><br>
-            <button class="actionButton" id="gatherButton" onclick="gather()" disabled>Gather</button>
-            <button class="actionButton" id="buildButton" onclick="build()" disabled>Build (all xp harvesting)</button><br>
-            <span id="mathematiseFormula"></span><textarea id="mathematiseAnswer" rows="1" cols="10">answer</textarea>
-            <button class="actionButton" id="mathematiseButton" onclick="mathematise()" disabled>Mathematise!</button><br>
-            <button class="actionButton" id="saveButton" onclick="save()" disabled>Save</button>
-            <button class="actionButton" id="loadButton" onclick="load()" disabled>Load</button>
-            <button class="actionButton" id="resetButton" onclick="reset()" disabled>Reset (<span id="resetCost">100</span> Levels)</button><br>
-            <button class="actionButton" id="enchance1Button" onclick="enchance(1)" disabled>Enchance (1 researching)</button>
-            <button class="actionButton" id="enchance2Button" onclick="enchance(2)" disabled>Enchance (2 researching)</button>
-            <button class="actionButton" id="enchance3Button" onclick="enchance(3)" disabled>Enchance (3 researching)</button>
-            <button class="actionButton" id="enchance4Button" onclick="enchance(4)" disabled>Enchance (4 researching)</button>
-            <button class="actionButton" id="enchance5Button" onclick="enchance(5)" disabled>Enchance (5 researching)</button><br>
-            <button class="actionButton" id="acquireFamilyButton" onclick="acquireFamily()" disabled>Acquire Family</button>
-            <button class="actionButton" id="trainButton" onclick="train()" disabled>Train</button><br>
-            <button class="actionButton" id="absorbButton" onclick="absorb()" disabled>Absorb (all xp collecting)</button>
-            <input type="checkbox" id="autoAbsorbCheck" name="Auto absorb" disabled onclick="gainXpAdv('selecting',1)"><br>
+            <div id="basicActionsDiv" class="actionsDiv">
+              <button class="actionButton" id="growButton" onclick="gainXp('growing',1)" disabled>Grow</button>
+              <input type="checkbox" id="autoGrowCheck" class="hidden" checked disabled onclick="gainXpAdv('selecting',1)"><br>
+              <button class="actionButton" id="eatButton" onclick="gainXp('eating',3)" disabled>Eat</button>
+              <button class="actionButton" id="drinkButton" onclick="gainXp('drinking',3)" disabled>Drink</button><br>
+              <button class="actionButton" id="thinkButton" onclick="gainXp('thinking',1)" disabled>Think</button>
+              <button class="actionButton" id="learnButton" onclick="learn()" disabled>Learn (-xp think)</button>
+              <button class="actionButton" id="researchButton" onclick="research()" disabled>Research (-xp obs,per,ins)</button><br>
+              <button class="actionButton" id="upgrade1Button" onclick="upgrade(1)" disabled>Upgrade (5 growing)</button>
+              <button class="actionButton" id="upgrade2Button" onclick="upgrade(2)" disabled>Upgrade (10 growing)</button>
+              <button class="actionButton" id="upgrade3Button" onclick="upgrade(3)" disabled>Upgrade (15 growing)</button><br>
+              <button class="actionButton" id="evolve1Button" onclick="evolve(1)" disabled>Evolve (3 not dying)</button>
+              <button class="actionButton" id="evolve2Button" onclick="evolve(2)" disabled>Evolve (6 not dying)</button>
+              <button class="actionButton" id="evolve3Button" onclick="evolve(3)" disabled>Evolve (9 not dying)</button><br>
+              <button class="actionButton" id="automate1Button" onclick="automate(1)" disabled>Automate (4 thinking)</button>
+              <button class="actionButton" id="automate2Button" onclick="automate(2)" disabled>Automate (8 thinking)</button>
+              <button class="actionButton" id="automate3Button" onclick="automate(3)" disabled>Automate (12 thinking)</button><br>
+              <button class="actionButton" id="killButton" onclick="gainXp('killing',1)" disabled>Kill</button>
+              <button class="actionButton" id="assimilateButton" onclick="assimilate()" disabled>Assimilate (-xp kill)</button><br>
+              <button class="actionButton" id="accelerateButton" onclick="gainXp('accelerating',1)" disabled>Accelerate</button>
+              <input type="checkbox" id="autoAccelerateCheck" class="hidden" disabled onclick="gainXpAdv('selecting',1)">
+              <button class="actionButton" id="increaseEfficiencyButton" onclick="gainXp('efficiencyIncreasing',1)" disabled>Increase Efficiency</button>
+              <input type="checkbox" id="autoIncreaseEfficiencyCheck" class="hidden" disabled onclick="gainXpAdv('selecting',1)"><br>
+              <button class="actionButton" id="generateRandomNumberButton" onclick="generateRandomNumber()" disabled>Generate Random Number</button>
+                <span id="randomNumber" class="hidden">0</span>
+              <input type="checkbox" id="autoGenerateCheck" class="hidden" disabled onclick="gainXpAdv('selecting',1)"><br>
+              <button class="actionButton" id="gatherButton" onclick="gather()" disabled>Gather</button>
+              <button class="actionButton" id="buildButton" onclick="build()" disabled>Build (-xp gather)</button><br>
+              <span id="autoclickingText" class="hidden">Autoclick : </span><select id="autoclickingSelect" class="hidden" disabled>
+                <option value="" selected></option>
+              </select>
+              <select id="autoclickingSelect2" class="hidden" disabled>
+                <option value="" selected></option>
+              </select><br>
+              <span id="mathematiseFormula" class="hidden"></span><textarea id="mathematiseAnswer" rows="1" cols="10" class="hidden">answer</textarea>
+              <button class="actionButton" id="mathematiseButton" onclick="mathematise()" disabled>Mathematise!</button><br>
+              <button class="actionButton" id="enchance1Button" onclick="enchance(1)" disabled>Enchance (1 researching)</button>
+              <button class="actionButton" id="enchance2Button" onclick="enchance(2)" disabled>Enchance (2 researching)</button>
+              <button class="actionButton" id="enchance3Button" onclick="enchance(3)" disabled>Enchance (3 researching)</button>
+              <button class="actionButton" id="enchance4Button" onclick="enchance(4)" disabled>Enchance (4 researching)</button>
+              <button class="actionButton" id="enchance5Button" onclick="enchance(5)" disabled>Enchance (5 researching)</button><br>
+              <button class="actionButton" id="acquireFamilyButton" onclick="acquireFamily()" disabled>Acquire Family</button>
+              <button class="actionButton" id="trainButton" onclick="train()" disabled>Train</button>
+              <select id="trainingSelect" class="hidden" disabled>
+                <option value="" selected></option>
+              </select>
+              <select id="trainingSelect2" class="hidden" disabled>
+                <option value="" selected></option>
+              </select><br>
+              <button class="actionButton" id="absorbButton" onclick="absorb()" disabled>Absorb (-xp collect)</button>
+              <input type="checkbox" id="autoAbsorbCheck" class="hidden" name="Auto absorb" disabled onclick="gainXpAdv('selecting',1)">
+              <button class="actionButton" id="reclaimButton" onclick="reclaim()" disabled>Reclaim (-xp absorb)</button><br>
+            </div>
+            <div id="metaActionsDiv" class="actionsDiv">
+              <button class="actionButton" id="saveButton" onclick="save()" disabled>Save</button>
+              <button class="actionButton" id="loadButton" onclick="loadFromLocalstorage()" disabled>Load</button><br>
+              <button class="actionButton" id="resetButton" onclick="reset()" disabled>Reset (<span id="resetCost">100</span> Levels)</button><br><br>
+              <button class="actionButton" id="exportButton" onclick="exportSave()" disabled>Export</button>
+              <button class="actionButton" id="importButton" onclick="importSave()" disabled>Import</button><br>
+              <textarea rows="1" cols="40" id="saveCode" class="hidden">save code</textarea><br><br>
+              <button class="actionButton" id="hardResetButton" onclick="hardReset()" disabled>Hard Reset</button><br><br>
+              <input type="checkbox" id="enableTooltipsCheck" class="hidden" name="Enable Tooltips" disabled onclick="toggleTooltips('basic')"><span id="enableTooltipsText" class="hidden">Enable tooltips</span><br>
+              <input type="checkbox" id="showXpValueCheck" class="hidden" name="Show XP Value" disabled onclick="toggleXpValues('raw')"><span id="showXpValueText" class="hidden">Show raw XP values</span><br>
+              <input type="checkbox" id="showXpPercentCheck" class="hidden" name="Show XP%" disabled onclick="toggleXpValues('per')"><span id="showXpPercentText" class="hidden">Show % XP values</span><br>
+              <input type="checkbox" id="showXpPerSecCheck" class="hidden" name="Show XP/sec" disabled onclick="toggleXpValues('sec')"><span id="showXpPerSecText" class="hidden">Show XP/sec</span>
+              <button class="actionButton" id="resetXpPerSecButton" onclick="resetXpPerSecCounters()" disabled>Reset xp/sec counter</button><br>
+              <input type="checkbox" id="enableAdvTooltipsCheck" class="hidden" name="Enable Advanced Tooltips" disabled onclick="toggleTooltips('advanced')"><span id="enableAdvTooltipsText" class="hidden">Enable advanced tooltips</span><br>
+              <input type="checkbox" id="enableSecretTooltipsCheck" class="hidden" name="Enable Secret Tooltips" disabled onclick="toggleTooltips('secret')"><span id="enableSecretTooltipsText" class="hidden">Enable secret tooltips</span><br>
+            </div>
+            <div id="itemActionsDiv" class="actionsDiv">
+              <button class="actionButton" id="mineButton" onclick="gainXpAdv('mining',1)" disabled>Mine</button>
+              <button class="actionButton" id="forgeButton" onclick="forge()" disabled>Forge (-xp mine)</button>
+              <button class="actionButton" id="craftButton" onclick="craft()" disabled>Craft (-xp forge)</button>
+              <button class="actionButton" id="equipButton" onclick="equip(1)" disabled>Equip</button>
+              <button class="actionButton" id="equipButton2" onclick="equip(2)" disabled>Equip 2</button><br>
+              <span class="hidden itemName" id="item">craft : <span id="itemName">nothing</span></span><br>
+              <span class="hidden itemName" id="equippedItem">equiped : <span id="equippedItemName">nothing</span></span><br>
+              <span class="hidden itemName" id="equippedItem2">equiped 2 : <span id="equippedItem2Name">nothing</span></span><br>
+              <button class="actionButton" id="rerollTypeButton" onclick="reroll('type','item')" disabled>reroll item type (-xp craft)</button>
+              <button class="actionButton" id="rerollRankButton" onclick="reroll('rank','item')" disabled>reroll item rank (-xp craft)</button><br>
+              <button class="actionButton" id="itemUpgradeButton" onclick="itemUpgrade('item')" disabled>Upg item(-xp forge)</button>
+              <button class="actionButton" id="suffixUpgradeButton" onclick="itemUpgrade('suffix')" disabled>Upg suffix(-xp forge)</button>
+              <button class="actionButton" id="prefixUpgradeButton" onclick="itemUpgrade('prefix')" disabled>Upg prefix(-xp forge)</button><br>
+              <button class="actionButton" id="rerollSuffixTypeButton" onclick="reroll('type','suffix')" disabled>reroll suffix type (-xp craft)</button>
+              <button class="actionButton" id="rerollSuffixRankButton" onclick="reroll('rank','suffix')" disabled>reroll suffix rank (-xp craft)</button><br>
+              <button class="actionButton" id="rerollPrefixTypeButton" onclick="reroll('type','prefix')" disabled>reroll prefix type (-xp craft)</button>
+              <button class="actionButton" id="rerollPrefixRankButton" onclick="reroll('rank','prefix')" disabled>reroll prefix rank (-xp craft)</button><br>
+              <button class="actionButton" id="itemUpstarButton" onclick="itemUpstar('item')" disabled>+Star item(-xp itemUp)</button>
+              <button class="actionButton" id="suffixUpstarButton" onclick="itemUpstar('suffix')" disabled>+Star suffix(-xp itemUp)</button>
+              <button class="actionButton" id="prefixUpstarButton" onclick="itemUpstar('prefix')" disabled>+Star prefix(-xp itemUp)</button><br>
+              <span id="itemAutoclickingText" class="hidden">Item autoclick : </span><select id="itemAutoclickingSelect" class="hidden" disabled>
+                <option value="" selected default></option>
+              </select>
+              <select id="itemAutoclickingSelect2" class="hidden" disabled>
+                <option value="" selected default></option>
+              </select><br>
+            </div>
           </div>
         </div>
       </div>
