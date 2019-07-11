@@ -143,7 +143,7 @@ var itemUpstarUnlocks = [false,false];
 //is the game loading? used to check if i should display/run a few things or not
 var loading = false;
 //how many messages should be saved in the log, extras are deleted
-var logLength = 24;
+var logLength = 15;
 //how many achievements you have unlocked, used to level up achieving
 var achievementsComplete = 0;
 //is the hard reset button unlocked? important, not sure why tbh, i forgot and too lazy to check
