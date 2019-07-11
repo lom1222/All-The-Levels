@@ -24,6 +24,7 @@ var totalLevels = 0;
 //color : holds the color value for the level text
 //parent : holds which levelDiv this level is upended into on creation
 //stars : holds maximum stars this level has achieved, this is separate from level because it isnt reset
+//unlockText : the text that displays in log when the level is unlocked
 //hint : what is displayed in log if you press the hint button and the level is the next one in the list
 var levels = {
   notDying : {name : "Not Dying", level : 0, xp : 0, xpReq : 5, xpReqBase : 5, unlocked : false, xpSecCounter : 0, skillType : "constitutioning", type : "basic", color : "rgb(200,150,200)", parent : "levelsDiv", stars : 0, unlockText : "ah, a fresh start", hint : "i can write anything here and nobody will ever know"},
@@ -401,6 +402,12 @@ function createTooltip(levelName){
   tooltipColorValue.id = levelName+"TooltipColorValue";
   tooltipColorValue.innerHTML = "Color: "+level.color;
   secretTooltip.appendChild(tooltipColorValue);
+
+  var tooltipUnlockTextValue = document.createElement("div");
+  tooltipUnlockTextValue.className = "tooltipUnlockTextValue";
+  tooltipUnlockTextValue.id = levelName+"TooltipUnlockTextValue";
+  tooltipUnlockTextValue.innerHTML = "Unlock text: "+level.unlockText;
+  secretTooltip.appendChild(tooltipUnlockTextValue);
 
   var tooltipHintValue = document.createElement("div");
   tooltipHintValue.className = "tooltipHintValue";
