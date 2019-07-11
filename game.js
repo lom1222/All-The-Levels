@@ -1990,6 +1990,9 @@ setInterval(function frame(){
       document.getElementById(levelName+"LevelValue").innerHTML = level.level;
       document.getElementById("totalLevel").innerHTML = totalLevels;
       resetXpBar(levelName);
+      if(level.level%10==0){
+        addToLog(levels[levelName].name+" reached level "+levels[levelName].level+"! nice");
+      }
       if(level.level%10==0&&level.level/10>level.stars){
         if(level.level/10>level.stars){
           level.stars++;
