@@ -872,6 +872,9 @@ function changeElementEnabledStatus(elementId, toDisable, hasAutoclickingOption,
         }
       }
     }else{
+      if(document.getElementById(elementId+"Option")!=null&&document.getElementById(elementId+"Option")!=undefined){
+        return;
+      }
       let option = document.createElement("option");
       option.innerHTML = element.innerHTML;
       option.value = elementId;
