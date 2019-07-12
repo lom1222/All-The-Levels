@@ -862,7 +862,7 @@ function reset(){
     document.getElementById("resetButton").childNodes[1].innerHTML = (100+25*levels.resetting.level);
     document.getElementById("resettingLevelValue").innerHTML = levels.resetting.level;
     resetting = false;
-    changeElementEnabledStatus("resetButton",false,false,false);
+    setTimeout(function(item){changeElementEnabledStatus("resetButton",false,false,false);},10000);
   }
 }
 //runs when you aquire family and the cooldown is high enough. resets cooldown to 0, changes the button to be enabled, and gives xp
