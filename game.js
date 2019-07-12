@@ -944,8 +944,10 @@ function absorb(){
 }
 //runs when you reclaim, smoothely removes absorbing xp, smoothely adds reclaiming xp, and adds xp to a random basc levels based on how much xp is used
 function reclaim(){
+  changeElementEnabledStatus("reclaimButton",true,false,false);
   smoothXpTransition("reclaiming",levels.absorbing.xp/50, true, true);
   smoothXpTransition("absorbing",-levels.absorbing.xp,false,false);
+  setTimeout(function(){changeElementEnabledStatus("reclaimButton",false,false,false);},3000);
   let reclaimedLevels = Math.floor(levels.absorbing.xp/50);
   for(let x = 0;x<reclaimedLevels;x++){
     var random = Math.floor(Math.random()*Object.keys(levels).length);
