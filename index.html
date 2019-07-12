@@ -97,6 +97,12 @@
               <button class="actionButton" id="absorbButton" onclick="absorb()" disabled>Absorb (-xp collect)</button>
               <input type="checkbox" id="autoAbsorbCheck" class="hidden" name="Auto absorb" disabled onclick="gainXpAdv('selecting',1)">
               <button class="actionButton" id="reclaimButton" onclick="reclaim()" disabled>Reclaim (-xp absorb)</button><br>
+              <div id="faqDiv" class="hidden">
+                FAQ: <select id="faqSelect" class="hidden" onchange="selectFaq()" disabled>
+                  <option value="" selected></option>
+                </select><br>
+                ANSWER : <span id="faqAnswer">well, you dont have a question selected, so no answer</span>
+              </div>
             </div>
             <div id="metaActionsDiv" class="actionsDiv">
               <button class="actionButton" id="saveButton" onclick="save()" disabled>Save</button>

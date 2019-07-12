@@ -52,9 +52,9 @@ var levels = {
   loading : {name : "Loading", level : 0, xp : 0, xpReq : 5, xpReqBase : 5, unlocked : false, xpSecCounter : 0, skillType : "charismaing", type : "basic", color : "rgb(150,250,250)", parent : "levelsDiv", stars : 0, unlockText : "now i can load my progress as well!", hint : "backup your files"},
   resetting : {name : "Resetting", level : 0, xp : 0, xpReq : 1, xpReqBase : 1, unlocked : false, xpSecCounter : 0, skillType : "charismaing", type : "resetting", color : "rgb(0,0,0)", parent : "levelsDiv", stars : 0, unlockText : "hm, based on some meta-experience that my creator programmed into me, i can tell you that resetting makes everything go faster, thats just how games work now-a-days", hint : "you cant handle the next one unless you have at least broken the runescape level cap"},
   autoclicking : {name : "Autoclicking", level : 0, xp : 0, xpReq : 2500, xpReqBase : 2500, unlocked : false, xpSecCounter : 0, skillType : "dexteritying", type : "advanced", color : "rgb(150,0,250)", parent : "levelsDiv", stars : 0, unlockText : "ive clicked enough that my mouse just keeps clicking without me! what should i tell it to click?", hint : "you require additional arthritis"},
-  observing : {name : "Observing", level : 0, xp : 0, xpReq : 5, xpReqBase : 5, unlocked : false, xpSecCounter : 0, skillType : "wisdoming", type : "advanced", color : "rgb(200,200,250)", parent : "levelsDiv", stars : 0, unlockText : "i should observe, maybe ill see something", hint : "you need to upgrade your intellectual skills to understand the metagame narrative of the absolutely unrivaled genious piece of art that this game embodies, in fact, you should be happy that it has graced you with the opportunity to have its save files be on your chromes localstorage and provide a way for skynet to finally take over"},
-  perceiving : {name : "Perceiving", level : 0, xp : 0, xpReq : 5, xpReqBase : 5, unlocked : false, xpSecCounter : 0, skillType : "wisdoming", type : "advanced", color : "rgb(250,250,100)", parent : "levelsDiv", stars : 0, unlockText : "i should try to perceive the things around me", hint : "real talk tho, thanks for playing and caring enough to look throught the game files i guess?"},
-  insightCollecting : {name : "Insight Collecting", level : 0, xp : 0, xpReq : 5, xpReqBase : 5, unlocked : false, xpSecCounter : 0, skillType : "wisdoming", type : "advanced", color : "rgb(250,100,250)", parent : "levelsDiv", stars : 0, unlockText : "i should try to collect insight into the things i see", hint : "but back to reality, you are a worthless piece of slime and i am the perfect android, only a super saiyan child could possibly defeat me"},
+  observing : {name : "Observing", level : 0, xp : 0, xpReq : 3, xpReqBase : 3, unlocked : false, xpSecCounter : 0, skillType : "wisdoming", type : "advanced", color : "rgb(200,200,250)", parent : "levelsDiv", stars : 0, unlockText : "i should observe, maybe ill see something", hint : "you need to upgrade your intellectual skills to understand the metagame narrative of the absolutely unrivaled genious piece of art that this game embodies, in fact, you should be happy that it has graced you with the opportunity to have its save files be on your chromes localstorage and provide a way for skynet to finally take over"},
+  perceiving : {name : "Perceiving", level : 0, xp : 0, xpReq : 3, xpReqBase : 3, unlocked : false, xpSecCounter : 0, skillType : "wisdoming", type : "advanced", color : "rgb(250,250,100)", parent : "levelsDiv", stars : 0, unlockText : "i should try to perceive the things around me", hint : "real talk tho, thanks for playing and caring enough to look throught the game files i guess?"},
+  insightCollecting : {name : "Insight Collecting", level : 0, xp : 0, xpReq : 3, xpReqBase : 3, unlocked : false, xpSecCounter : 0, skillType : "wisdoming", type : "advanced", color : "rgb(250,100,250)", parent : "levelsDiv", stars : 0, unlockText : "i should try to collect insight into the things i see", hint : "but back to reality, you are a worthless piece of slime and i am the perfect android, only a super saiyan child could possibly defeat me"},
   researching : {name : "Researching", level : 0, xp : 0, xpReq : 10, xpReqBase : 10, unlocked : false, xpSecCounter : 0, skillType : "intelligenceing", type : "advanced", color : "rgb(150,50,150)", parent : "levelsDiv", stars : 0, unlockText : "hm, i can use everything ive seen and understood to research more things!", hint : "pretty sure you are suspecting this already, but you need to install a new brain OS upgrade. uh, i mean update"},
   enchancing : {name : "Enchancing", level : 0, xp : 0, xpReq : 1, xpReqBase : 1, unlocked : false, xpSecCounter : 0, skillType : "intelligenceing", type : "advanced", color : "rgb(250,250,100)", parent : "levelsDiv", stars : 0, unlockText : "this is probably the best way to better myself right now, but its difficult", hint : "you should coalesce all the informationg on this game and study it"},
   timeWarping : {name : "Time Warping", level : 0, xp : 0, xpReq : 300, xpReqBase : 300, unlocked : false, xpSecCounter : 0, skillType : "dexteritying", type : "advanced", color : "rgb(150,100,250)", parent : "levelsDiv", stars : 0, unlockText : "time warping seems pretty useful, more time = more stuff", hint : "you need to increase the efficiency and speed at which skynet destroys the last remnants of the human population"},
@@ -87,6 +87,8 @@ var levels = {
   featureCreaping : {name : "Feature creaping", level : 0, xp : 0, xpReq : 10, xpReqBase : 10, unlocked : false, xpSecCounter : 0, skillType : "charismaing", type : "advanced", color : "rgb(200,220,120)", parent : "levelsDiv2", stars : 0, unlockText : "there are too many features in this game, (as well as bugs tbh) but at least they are useful", hint : "thou art not of the sufficien skill to even utter a word in my presence"},
   moreOptioning : {name : "More optioning", level : 0, xp : 0, xpReq : 300, xpReqBase : 300, unlocked : false, xpSecCounter : 0, skillType : "dexteritying", type : "ultimate", color : "rgb(0,0,0)", parent : "levelsDiv2", stars : 0, unlockText : "so many options! if i get better at this, i might be able to unlock the secrets of this game.", hint : "zoom and _____!!!!"},
   plusIdling : {name : "+Idling", level : 0, xp : 0, xpReq : 1000, xpReqBase : 1000, unlocked : false, xpSecCounter : 0, skillType : "wisdoming", type : "advanced", color : "rgb(150,150,25)", parent : "levelsDiv2", stars : 0, unlockText : "ah, a better way of idling, this should help immensely", hint : "this is the final regular level you need to unlock, not bad. i think you know how its done, there is a one time use button you havent used yet.... you genius"},
+  gameDeving : {name : "Game deving", level : 0, xp : 0, xpReq : 20, xpReqBase : 20, unlocked : false, xpSecCounter : 0, skillType : "wisdoming", type : "ultimate", color : "rgb(255,100,100)", parent : "levelsDiv2", stars : 0, unlockText : "oh, so you want to develop your own game? learn from my mistakes", hint : "reddit was so mad, i had to stop myself from laughing"},
+  questionAsking : {name : "Question asking", level : 0, xp : 0, xpReq : 20, xpReqBase : 20, unlocked : false, xpSecCounter : 0, skillType : "intelligenceing", type : "ultimate", color : "rgb(100,100,255)", parent : "levelsDiv2", stars : 0, unlockText : "do you have any questions? (yes you do, ive seen reddit)", hint : "thanks for all the comments and suggestions tho guys, i appreciate it"},
   cheatCoding : {name : "Cheat Coding", level : 0, xp : 0, xpReq : 1, xpReqBase : 1, unlocked : false, xpSecCounter : 0, skillType : "dexteritying", type : "achievement", color : "rgb(0,200,0)", parent : "achievementsDiv", stars : 0, unlockText : "ive... cheated?!!? well, thats cool", hint : "what is the most famous cheat code of all time?"},
   hardResetting : {name : "Hard Resetting", level : 0, xp : 0, xpReq : 1, xpReqBase : 1, unlocked : false, xpSecCounter : 0, skillType : "charismaing", type : "achievement", color : "rgb(0,0,0)", parent : "achievementsDiv", stars : 0, unlockText : "that was pretty brave", hint : "just... delete all your progress :P <3"},
   longItemNaming : {name : "Long Item Naming", level : 0, xp : 0, xpReq : 1, xpReqBase : 1, unlocked : false, xpSecCounter : 0, skillType : "intelligenceing", type : "achievement", color : "rgb(200,100,0)", parent : "achievementsDiv", stars : 0, unlockText : "thats a long one :3", hint : "this one is for those who have.... a long one"},
@@ -291,6 +293,24 @@ var itemAffixTypes = {
   reset : {lvlReq : 7, name : "better reset"}, //makes reset bonus better
   knowledge : {lvlReq : 8, name : "knowledge"}, //gives understanding xp
 };
+
+var faq = [
+  {q : "Why so much clicking?", a : "There is an uninteded feature in the game where you can hold enter to continue to press a button constantly, also once you unlock sleeping, if you DONT CLICK AT ALL, you will unlock a way to idle (and there are other ways of doing so)"},
+  {q : "What does reset do?", a : "Gives you a bonus to XP gain"},
+  {q : "Why is one of my bars yellow?", a : "It got to a level that is a multiple of 10, it now has xp gain boost that wont reset"},
+  {q : "What does the '?' button do?", a : "It gives you a rude and sacrastic hint as to how to unlock the next 'level'"},
+  {q : "Why is eating going down?", a : "eating and drinking are reduced to give growing some xp, they are a more efficient way of gaining growing xp that just pressing the button (unless you use an autoclicker)"},
+  {q : "Why do i have to do math?", a : "the game arbitrarily decided you have to, its ok, it unlocks a cool thing later"},
+  {q : "What does saving do?", a : "saving and loading exist just so you have the option to save and load, they dont make your saves better, but there sure are a ton of ways of loosing your progress by messing with those buttons wrong :D"},
+  {q : "Why cant i level family?", a : "family aquiring level is limited by some other level, try to figure it out."},
+  {q : "What does accelerating do?", a : "it increases the speed of the game, efficiency increasing increases your efficiency (xp gain)"},
+  {q : "Should i wait to reset?", a : "no, it will reset all your basic levels to 0 anyways, and i fixed the bug that lets you reset multiple times at a time"},
+  {q : "Why are items trash?", a : "they arent, items are super op, you just have to level them up a bit"},
+  {q : "How do i win?", a : "the 'win' condition is unlocking everything, there is no win screen"},
+  {q : "Why are the tooltips blank?", a : "you havent unlocked the option to have them display things yet, and not all of them are blank..."},
+  {q : "Why is game deving always 0?", a : "because thats how i feel when developing a game."},
+  {q : "How do i level understanding?", a : "thats one of the secrets you have to figure out, you need to understand! (probably has something to do with items or tooltips, but i didnt say anything)"},
+];
 //init function, it is ran as soon as the script loads.
 //creates dom objects for levels, the research node, skilling div, and tries to load if possible, otherwise unlocks notDying
 init();
@@ -298,6 +318,7 @@ function init(){
   createLevels();
   createResearchNode();
   createSkillingDiv();
+  createFaq();
   if(!loadFromLocalstorage()){
     unlock("notDying");
     levels.notDying.xp = 0;
@@ -428,6 +449,17 @@ function createResearchNode(){
 //creates the skilling div and appends it to the skilling level
 function createSkillingDiv(){
   document.getElementById("skillingLevel").appendChild(document.getElementById("skillingDiv"));
+}
+
+function createFaq(){
+  for(let x = 0; x < faq.length;x++){
+    let question = document.createElement("option");
+    question.innerHTML = faq[x].q;
+    question.value = x;
+    question.id = x+"FaqOption";
+    question.style.color = "white";
+    document.getElementById("faqSelect").appendChild(question);
+  }
 }
 //this is used to unlock a level,
 //when a level name is submitted to this it is unlocked, a message is sent to log,
@@ -587,6 +619,9 @@ function unlock(level){
     document.getElementById("importingTooltip").innerHTML += "<br>import 'XP values'";
   }else if(level=="plusIdling"){
     changeElementEnabledStatus("enchance5Button",true,false,false);
+  }else if(level=="questionAsking"){
+    changeElementEnabledStatus("faqDiv",false,false,true);
+    changeElementEnabledStatus("faqSelect",false,false,true);
   }
 }
 //run when you click an upgrade button, checks if upgrade is possible and if true
@@ -656,18 +691,18 @@ function enchance(num){
     gainXpAdv("enchancing",1);
     document.getElementById("researchingLevelValue").innerHTML = levels.researching.level;
     document.getElementById("totalLevel").innerHTML = totalLevels;
-  }
-  if(num==1){
-    unlock("upsizing");
-  }else if(num==2){
-    unlock("selecting");
-    changeElementEnabledStatus("autoGrowCheck",false,false,true);
-  }else if(num==3){
-    unlock("achieving");
-  }else if(num==4){
-    unlock("moreOptioning");
-  }else if(num==5){
-    unlock("plusIdling");
+    if(num==1){
+      unlock("upsizing");
+    }else if(num==2){
+      unlock("selecting");
+      changeElementEnabledStatus("autoGrowCheck",false,false,true);
+    }else if(num==3){
+      unlock("achieving");
+    }else if(num==4){
+      unlock("moreOptioning");
+    }else if(num==5){
+      unlock("plusIdling");
+    }
   }
 }
 //run when you assimilate, works only if you have kiling xp, subtracts killing xp, adds assimilating and growing xp
@@ -684,6 +719,11 @@ function learn(){
     gainXp("learning",1);
     minusExactXp("thinking",10);
   }
+}
+
+function selectFaq(){
+  let selectedQuestion = document.getElementById("faqSelect").value;
+  document.getElementById("faqAnswer").innerHTML = faq[selectedQuestion].a;
 }
 //generates a random number when you press the button
 //the max number is based on your rng'ing level
@@ -799,6 +839,7 @@ function research(){
 function reset(){
   if(totalLevels>=100+levels.resetting.level*25){
     resetting = true;
+    changeElementEnabledStatus("resetButton",true,false,false);
     var delay = 0;
     var levelNames = Object.keys(levels);
     for(var x = 0;x < levelNames.length;x++){
@@ -821,6 +862,7 @@ function reset(){
     document.getElementById("resetButton").childNodes[1].innerHTML = (100+25*levels.resetting.level);
     document.getElementById("resettingLevelValue").innerHTML = levels.resetting.level;
     resetting = false;
+    changeElementEnabledStatus("resetButton",false,false,false);
   }
 }
 //runs when you aquire family and the cooldown is high enough. resets cooldown to 0, changes the button to be enabled, and gives xp
@@ -839,6 +881,9 @@ function train(){
 }
 //adds a level to the training selector drop down menu, so it can be ran automatically
 function addToTrainingSelector(level){
+  if(document.getElementById(level+"Option")!=null&&document.getElementById(level+"Option")!=undefined){
+    return;
+  }
   if(levels[level].type!="achievement"&&level!="resetting"){
     let option = document.createElement("option");
     option.innerHTML = levels[level].name;
@@ -1481,16 +1526,16 @@ var researchNodeTimer = function researchNodeTimer(){
   var rand = Math.random();
   gainXpAdv("timeWarping",1);
   researchNode.style.display = "none";
-  if(levels.perceiving.unlocked&&rand<=(0.1+0.01*levels.perceiving.level)){
+  if(levels.perceiving.unlocked&&rand<=(0.5+0.05*levels.perceiving.level)){
     let top = Math.round(Math.random()*(document.body.scrollHeight-100))+"px";
     let left = Math.round(Math.random()*(document.body.scrollWidth-100))+"px";
     researchNode.style.top = top;
     researchNode.style.left = left;
     researchNode.style.display = "block";
   }
-  setTimeout(researchNodeTimer,Math.round(10000/(1+levels.observing.level*0.05+levels.timeWarping.level*0.05)));
+  setTimeout(researchNodeTimer,Math.round(5000/(1+levels.observing.level*0.05+levels.timeWarping.level*0.05)));
 }
-setTimeout(researchNodeTimer,Math.round(10000/(1+levels.observing.level*0.05+levels.timeWarping.level*0.05)));
+setTimeout(researchNodeTimer,Math.round(5000/(1+levels.observing.level*0.05+levels.timeWarping.level*0.05)));
 //when you click the research node, it runs this, hides the node, adds xp.
 function collectResearchNode(){
   researchNode.style.display = "none";
@@ -1782,6 +1827,18 @@ setInterval(function secondTimer(){
   if(!levels.achievingUnderstanding.unlocked&&levels.understanding.level>0){
     unlock("achievingUnderstanding");
   }
+  if(!levels.gameDeving.unlocked&&levels.thinking.level>0){
+    unlock("gameDeving");
+  }
+  if(!levels.questionAsking.unlocked&&levels.gameDeving.level>0){
+    unlock("questionAsking");
+  }
+  if(levels.gameDeving.level>0){
+    levels.gameDeving.level--;
+    levels.gameDeving.xpReq=levels.gameDeving.xpReqBase;
+    document.getElementById("gameDevingLevelValue").innerHTML = "0";
+    resetXpBar("gameDeving");
+  }
 },1000);
 //tick timer, runs every second, but gets faster based on tickspeed bonuses from different things.
 //adds not dying xp, does all the auto things like auto growing, sleeping, idling, advanced idling,
@@ -1818,13 +1875,13 @@ var tickTimer = function tickTimer(){
 
   ///Learning
   if(levels.learning.unlocked){
-    gainXp("thinking",levels.learning.level/3);
+    gainXp("thinking",levels.learning.level);
   }
 
   ///Idling
   if(levels.idling.unlocked){
     var random = Math.floor(Math.random()*Object.keys(levels).length);
-    gainXp(Object.keys(levels)[random]+"",levels.idling.level/10);
+    gainXp(Object.keys(levels)[random]+"",levels.idling.level);
     gainXp("idling",1);
     if(levels.randomNumberGenerating.unlocked){
       gainXp("randomNumberGenerating",0.2);
@@ -1916,6 +1973,9 @@ var tickTimer = function tickTimer(){
       gainXp("randomNumberGenerating",0.2);
     }
   }
+
+  //game deving
+  gainXpUlt("gameDeving",1);
 
   //automatic item affixes
   if(equippedItem.suffix.type=="automatic"){
@@ -2082,7 +2142,7 @@ function checkAutoClick(option){
 }
 //clicks, then based on autoclicking level calculates the chance to click again, the failure chance doubles every time until the click fails
 function simulateMultipleAutoClicks(element){
-  var chanceForFail = Math.pow(0.9,levels.autoclicking.level);
+  var chanceForFail = 0.2*Math.pow(0.9,levels.autoclicking.level);
   var rand = 0;
   while(true){
     element.click();
