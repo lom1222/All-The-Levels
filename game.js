@@ -1837,6 +1837,7 @@ setInterval(function secondTimer(){
     levels.gameDeving.level--;
     levels.gameDeving.xpReq=levels.gameDeving.xpReqBase;
     document.getElementById("gameDevingLevelValue").innerHTML = "0";
+    totalLevel--;
     resetXpBar("gameDeving");
   }
 },1000);
