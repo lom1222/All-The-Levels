@@ -1344,12 +1344,12 @@ function resetXpBar(levelName){
   var level = levels[levelName];
   var percentValue = Math.min(100,(100*level.xp/level.xpReq)).toFixed(1)+"%";
   document.getElementById(levelName+"Xp").style.width = percentValue;
-  var oneInHundred = Math.floor(Math.random()*100)==0&&levels.moreOptioning.level!=2;
+  var oneInHundred = Math.floor(Math.random()*100)==0&&levels.moreOptioning.level==2;
   //496d706f727427536563274966526573656172636856697369626c65
   document.getElementById(levelName+"XpPercentValue").innerHTML = "XP%: "+percentValue + (oneInHundred?"<div class='reallySmallText'>496d706f7274 2753656327 4966 5265736561726368 56697369626c65</div>":"");
-  oneInHundred = Math.floor(Math.random()*100)==0&&levels.moreOptioning.level!=1;
+  oneInHundred = Math.floor(Math.random()*100)==0&&levels.moreOptioning.level==1;
   document.getElementById(levelName+"XpRawValue").innerHTML = "XP: "+Math.round(level.xp)+"/"+(oneInHundred?"'%'&click?":Math.round(level.xpReq));
-  oneInHundred = Math.floor(Math.random()*100)==0&&levels.moreOptioning.level!=3;
+  oneInHundred = Math.floor(Math.random()*100)==0&&levels.moreOptioning.level==3;
   //✓ ☐ //☐☐✓✓✓☐✓✓☐?
   document.getElementById(levelName+"XpPerSecValue").innerHTML = "XP/sec: "+(oneInHundred?"☐☐✓✓✓☐✓✓☐?":(level.xpSecCounter/xpSecTimer).toFixed(1));
 }
@@ -1839,7 +1839,7 @@ setInterval(function secondTimer(){
     levels.gameDeving.level--;
     levels.gameDeving.xpReq=levels.gameDeving.xpReqBase;
     document.getElementById("gameDevingLevelValue").innerHTML = "0";
-    totalLevel--;
+    totalLevels--;
     resetXpBar("gameDeving");
   }
 },1000);
