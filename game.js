@@ -1142,7 +1142,7 @@ function writeItemName(slot){
     if(!levels.longItemNaming.unlocked&&completeItemName.length>=100){
       unlock("longItemNaming");
     }
-    if(!levels.absolutePerfecting.unlocked&&completeItemName=="10* 30/30 transcendent knowledge 10* 30/30 transcendent tarasque tear of 10* 30/30 transcendent knowledge (clvl 10)"){
+    if(!levels.absolutePerfecting.unlocked&&(itemWithName.type=="tarasqueAmulet"&&itemWithName.rank=="transcendent"&&itemWithName.level>=30&&itemWithName.stars>=10)&&(itemWithName.prefix.type=="knowledge"&&itemWithName.prefix.rank=="transcendent"&&itemWithName.prefix.level>=30&&itemWithName.prefix.stars>=10)&&(itemWithName.suffix.type=="knowledge"&&itemWithName.suffix.rank=="transcendent"&&itemWithName.suffix.level>=30&&itemWithName.suffix.stars>=10)){
       unlock("absolutePerfecting");
     }
   }
@@ -2378,11 +2378,10 @@ function hardReset(){
     unlock("notDying");
     save();
     loadFromLocalstorage();
+    if(!levels.hardResetting.unlocked){
+      unlock("hardResetting");
+    }
   },10000);
-
-  if(!levels.hardResetting.unlocked){
-    unlock("hardResetting");
-  }
 }
 //displays a string in log based on the next level you havent unlocked and its hint.
 function askForHelp(){
